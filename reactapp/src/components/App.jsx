@@ -32,11 +32,9 @@ export default class App extends Component {
           incidunt sed iure suscipit eos consectetur molestiae? Nostrum, fugiat!
         </p>
         <hr />
-        <ul>
-          {this.state.lists.map((item) => (
-            <li>item</li>
-          ))}
-        </ul>
+        <ul>{this.renderList()}</ul>
+        {/* OR */}
+        <ul>{this.state.lists.length === 0 && "List is empty"}</ul>
       </React.Fragment>
     );
   }
@@ -45,5 +43,12 @@ export default class App extends Component {
   }
   formatCounter() {
     return this.state.counter === 0 ? "zero" : this.state.counter;
+  }
+  renderList() {
+    if (this.state.lists.length === 0) {
+      return <p>List is empty</p>;
+    } else {
+      return this.state.lists.map((item) => <li>{item}</li>);
+    }
   }
 }
