@@ -8,8 +8,8 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>State Object</h1>
-        <img src={this.state.url} />
+        <h1 className="m-2 p-2">State Object</h1>
+        <img className="m-2 p-2" src={this.state.url} />
       </React.Fragment>
     );
   }
