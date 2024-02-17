@@ -5,6 +5,7 @@ export default class App extends Component {
   state = {
     counter: 2, // change the counter value to see the effects
     url: "https://picsum.photos/200", // use to generate random image of 200x200
+    lists: ["Delhi", "Mumbai", "Chennai"],
   };
   styleObj = {
     fontSize: 20,
@@ -13,6 +14,7 @@ export default class App extends Component {
     padding: 10,
     //fontSize: "20px"
   };
+
   render() {
     return (
       <React.Fragment>
@@ -29,6 +31,12 @@ export default class App extends Component {
           obcaecati repudiandae ullam fugiat alias illum eum, consequatur,
           incidunt sed iure suscipit eos consectetur molestiae? Nostrum, fugiat!
         </p>
+        <hr />
+        <ul>
+          {this.state.lists.map((item) => (
+            <li>item</li>
+          ))}
+        </ul>
       </React.Fragment>
     );
   }
