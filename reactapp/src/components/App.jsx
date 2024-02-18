@@ -6,7 +6,25 @@ import "font-awesome/css/font-awesome.css";
 export default class App extends Component {
   details = {
     name: "ToDo App",
+    taskList: [
+      {
+        id: this.getRandomId(),
+        category: "Main Task Table",
+      },
+      {
+        id: this.getRandomId(),
+        category: "Temp TT",
+      },
+      {
+        id: this.getRandomId(),
+        category: "Misc Entry",
+      },
+    ],
   };
+
+  getRandomId() {
+    return Math.floor(Math.random() * 10000);
+  }
 
   render() {
     return (
@@ -50,10 +68,9 @@ export default class App extends Component {
           composed according to needs. here Tasks component are used twice to
           demonstrate independent state of different components.
           <hr />
-          <h3>First Task List</h3>
-          <Tasks />
-          <h3>Second Task List</h3>
-          <Tasks />
+          {this.details.taskList.map((item) => (
+            <Tasks key={item.id} value={item.category} />
+          ))}
         </main>
         <footer className="bg-dark text-light m-2 p-2">
           Database last synced on : <span className="badge">{Date()}</span>

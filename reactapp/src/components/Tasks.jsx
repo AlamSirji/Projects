@@ -4,6 +4,7 @@ export default class Tasks extends Component {
   render() {
     return (
       <React.Fragment>
+        <h3>{this.props.value}</h3>
         <table className="table">
           <thead>
             <tr>
@@ -46,21 +47,25 @@ export default class Tasks extends Component {
     );
   }
 
+  getRandomId() {
+    return Math.floor(Math.random() * 10000);
+  }
+
   taskList = [
     {
-      id: 1,
+      id: this.getRandomId(),
       task: "Update Backend Server of 160",
       reps: "SysAdmin Team",
       status: "Pending",
     },
     {
-      id: 2,
+      id: this.getRandomId(),
       task: "Remove Backlogs and Temporariy Data",
       reps: "SysAdmin Team",
       status: "Done",
     },
     {
-      id: 3,
+      id: this.getRandomId(),
       task: "Add New Server API by June 2024",
       reps: "Backend-developer S1",
       status: "Pending",
@@ -80,7 +85,7 @@ export default class Tasks extends Component {
   addTask = () => {
     this.setState({
       taskList: this.taskList.push({
-        id: Math.floor(Math.random() * 10000),
+        id: this.getRandomId(),
         task: prompt("enter the task", "some random task ..."),
         reps: prompt("reps name : ", "some random reps."),
         status: "Pending",
