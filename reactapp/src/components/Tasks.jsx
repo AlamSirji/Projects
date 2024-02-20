@@ -33,7 +33,7 @@ export default class Tasks extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.taskList.map((task) => (
+            {this.state.taskList.map((task) => (
               <tr key={task.id}>
                 <th>{task.id}</th>
                 <th>{task.task}</th>
@@ -62,31 +62,33 @@ export default class Tasks extends Component {
     return Math.floor(Math.random() * 10000);
   }
 
-  taskList = [
-    {
-      id: this.getRandomId(),
-      task: "Update Backend Server of 160",
-      reps: "SysAdmin Team",
-      status: "Pending",
-    },
-    {
-      id: this.getRandomId(),
-      task: "Remove Backlogs and Temporariy Data",
-      reps: "SysAdmin Team",
-      status: "Done",
-    },
-    {
-      id: this.getRandomId(),
-      task: "Add New Server API by June 2024",
-      reps: "Backend-developer S1",
-      status: "Pending",
-    },
-  ];
+  state = {
+    taskList: [
+      {
+        id: this.getRandomId(),
+        task: "Update Backend Server of 160",
+        reps: "SysAdmin Team",
+        status: "Pending",
+      },
+      {
+        id: this.getRandomId(),
+        task: "Remove Backlogs and Temporariy Data",
+        reps: "SysAdmin Team",
+        status: "Done",
+      },
+      {
+        id: this.getRandomId(),
+        task: "Add New Server API by June 2024",
+        reps: "Backend-developer S1",
+        status: "Pending",
+      },
+    ],
+  };
 
   handlerDelete = (taskId) => {
-    alert("This Task vide ID : " + taskId + " is to be deleted");
-    // console.log(this.taskList.filter(this.checkTask(taskId)));
-    // needs better delete operation
+    console.log(taskId);
+    const updatedTaskList = this.state.taskList.filter((c) => c.id !== taskId);
+    this.setState({ taskList: updatedTaskList });
   };
 
   addTask = () => {

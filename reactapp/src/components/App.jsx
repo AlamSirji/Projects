@@ -28,7 +28,7 @@ export default class App extends Component {
 
   deleteHandler = (itemId) => {
     console.log(this.state.taskList);
-    // alert("I will delete from the app section : " + itemId);
+    console.log("I will delete from the app section : " + itemId);
     const updatedTaskList = this.state.taskList.filter((c) => c.id !== itemId);
     console.log(updatedTaskList);
     this.setState({ taskList: updatedTaskList });
