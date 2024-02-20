@@ -4,7 +4,18 @@ export default class Tasks extends Component {
   render() {
     return (
       <React.Fragment>
-        <h3>{this.props.value}</h3>
+        <h3>
+          {this.props.value} : {this.props.id}
+        </h3>
+        <span
+          title="Remove TaskList completely"
+          className="btn btn-sm btn-danger p-2 m-2"
+          onClick={() => {
+            this.props.onDelete(this.props.id);
+          }}
+        >
+          <i className="fa fa-trash"></i>
+        </span>
         <table className="table">
           <thead>
             <tr>
@@ -73,14 +84,10 @@ export default class Tasks extends Component {
   ];
 
   handlerDelete = (taskId) => {
-    alert("under development");
+    alert("This Task vide ID : " + taskId + " is to be deleted");
     // console.log(this.taskList.filter(this.checkTask(taskId)));
     // needs better delete operation
   };
-
-  // checkTask(taskId) {
-  //   return taskId;
-  // }
 
   addTask = () => {
     this.setState({
