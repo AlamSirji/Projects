@@ -79,11 +79,10 @@ export default class App extends Component {
           {this.state.taskList.map((item) => (
             <Tasks
               key={item.id}
-              value={item.category}
-              id={item.id}
               onDelete={() => {
                 this.deleteHandler(item.id);
               }}
+              data={item}
             />
           ))}
         </main>

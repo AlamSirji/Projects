@@ -5,7 +5,7 @@ export default class Tasks extends Component {
     return (
       <React.Fragment>
         <h3>
-          {this.props.value} : {this.props.id}
+          {this.props.data.category} : {this.props.data.id}
         </h3>
         <span
           title="Remove TaskList completely"
