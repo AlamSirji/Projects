@@ -5,6 +5,21 @@ import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 import Nav from "./common/Nav";
 export default class App extends Component {
+  constructor() {
+    super();
+    console.log("App Component Loaded.");
+  }
+
+  componentDidMount() {
+    // Perfect place for AJAX calls
+    console.log("App Component mounted.");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // Perfect place to get new data AJAX calls etc.
+    console.log("App component updated", prevProps, prevState);
+  }
+
   state = {
     name: "ToDo App",
     taskList: [
@@ -36,6 +51,7 @@ export default class App extends Component {
   };
 
   render() {
+    console.log("App component is rendering...");
     return (
       <React.Fragment>
         <header>

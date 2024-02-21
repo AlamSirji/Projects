@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 export default class Tasks extends Component {
   render() {
+    console.log("Tasks Component rendering...");
     const { data, onDelete } = this.props;
     return (
       <React.Fragment>
@@ -57,6 +58,19 @@ export default class Tasks extends Component {
         </table>
       </React.Fragment>
     );
+  }
+
+  constructor() {
+    super();
+    console.log("Tasks component loaded");
+  }
+
+  componentDidMount() {
+    console.log("Task Component mounted");
+  }
+
+  componentWillUnmount() {
+    console.log("Task component is deleting..");
   }
 
   getRandomId() {

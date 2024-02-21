@@ -1,5 +1,6 @@
 // stateless functional component
 const navBar = ({ totalTasks }) => {
+  console.log("Nav bar is rendering from a stateless functional component");
   return (
     <nav className="m-2 p-2 navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">
