@@ -1,9 +1,9 @@
 // stateless functional component
-const navBar = (props) => {
+const navBar = ({ totalTasks }) => {
   return (
     <nav className="m-2 p-2 navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">
-        Total : {props.totalTasks} tasks
+        Total : {totalTasks} task table
       </a>
       <button
         className="navbar-toggler"

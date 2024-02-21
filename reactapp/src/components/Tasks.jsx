@@ -2,16 +2,17 @@ import React from "react";
 import { Component } from "react";
 export default class Tasks extends Component {
   render() {
+    const { data, onDelete } = this.props;
     return (
       <React.Fragment>
         <h3>
-          {this.props.data.category} : {this.props.data.id}
+          {data.category} : {data.id}
         </h3>
         <span
           title="Remove TaskList completely"
           className="btn btn-sm btn-danger p-2 m-2"
           onClick={() => {
-            this.props.onDelete(this.props.id);
+            onDelete(data.id);
           }}
         >
           <i className="fa fa-trash"></i>
