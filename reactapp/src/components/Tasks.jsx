@@ -92,14 +92,7 @@ export default class Tasks extends Component {
   };
 
   addTask = () => {
-    this.setState({
-      taskList: this.taskList.push({
-        id: this.getRandomId(),
-        task: prompt("enter the task", "some random task ..."),
-        reps: prompt("reps name : ", "some random reps."),
-        status: "Pending",
-      }),
-    });
+    alert("Bug to be fixed for addition");
   };
 
   getStatusClass(status) {

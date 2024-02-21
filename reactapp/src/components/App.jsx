@@ -3,6 +3,7 @@ import { Component } from "react";
 import Tasks from "./Tasks";
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
+import Nav from "./common/Nav";
 export default class App extends Component {
   state = {
     name: "ToDo App",
@@ -38,38 +39,7 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <header>
-          <nav className="m-2 p-2 navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">
-              {this.state.name}
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div className="navbar-nav">
-                <a className="nav-item nav-link active" href="#">
-                  Home <span className="sr-only">(current)</span>
-                </a>
-                <a className="nav-item nav-link" href="#">
-                  Features
-                </a>
-                <a className="nav-item nav-link" href="#">
-                  Pricing
-                </a>
-                <a className="nav-item nav-link disabled" href="#">
-                  Disabled
-                </a>
-              </div>
-            </div>
-          </nav>
+          <Nav totalTasks={this.state.taskList.length} />
         </header>
         <main className="m-2 p-2 alert alert-info">
           Rreact JS uses Components based architecture hence components can be
